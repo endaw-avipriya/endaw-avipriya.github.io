@@ -1,18 +1,400 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avipriya Endaw - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    canvas#bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 10px rgba(57, 255, 20, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 5px rgba(106, 13, 173, 0.7), 0 0 5px rgba(57, 255, 20, 0.3);
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    .hero-content {
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Shared styles for sections */
+    .skills, .projects {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .skills h2, .projects h2 {
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2);
+      margin-bottom: 40px;
+    }
+
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card, .project-card {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid transparent;
+      background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+                  linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%) border-box;
+      text-align: left;
+    }
+
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
+    }
+
+    .skill-card h3, .project-card h3 {
+      font-size: 1.5rem;
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .project-card p {
+      margin-bottom: 20px;
+    }
+
+    .project-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      color: #39FF14;
+      border: 1px solid #39FF14;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .project-btn:hover {
+      background-color: #39FF14;
+      color: #0d0d0d;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    }
+
+    .contact {
+      padding: 80px 20px;
+      background: #0d0d0d;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: #39FF14;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .contact a:hover {
+      color: #6A0DAD;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <canvas id="bgCanvas"></canvas>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+  <header>
+    <nav>
+      <h1>Avipriya Endaw</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Hi, I'm Avipriya Endaw</h2>
+      <p>Software developer with a practical approach to building reliable, maintainable code. Comfortable working across the stack and collaborating in team environments. Focused on writing clean code, learning continuously, and contributing to meaningful projects. Explore my work below!</p>
+    </div>
+  </section>
 
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Programming Languages</h3>
+        <p>C, Java, JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <h3>Web Development</h3>
+        <p>Creating modern, responsive websites with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Data Analysis</h3>
+        <p>Extracting insights from structured trading data using Redis, Protobuf, and JSON.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Database Management</h3>
+        <p>Managing data integrity and performance with optimized SQL and Oracle PL/SQL.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Goblin Algo</h3>
+        <p>A high-frequency trading bot built with Java, Spring Boot, and PL/SQL, utilizing Redis for ultra-low latency data caching and messaging.</p>
+        <a href="https://github.com/endaw-avipriya/Goblin" class="project-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      </div>
+      </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>Email: <a href="mailto:endawavipriya@gmail.com">endawavipriya@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/endaw-avipriya">github.com/endaw-avipriya</a></p>
+  </section>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.baseRadius = Math.random() * 1.5 + 1;
+        this.radius = this.baseRadius;
+        this.angle = Math.random() * Math.PI * 2;
+        this.speed = (Math.random() * 0.04) + 0.01;
+      }
+
+      draw() {
+        const glowLevel = (this.radius - this.baseRadius) / (this.baseRadius * 2);
+
+        ctx.save();
+
+        if (glowLevel > 0.1) {
+          ctx.shadowBlur = glowLevel * 30;
+          // Use Neon Green for the shadow glow
+          ctx.shadowColor = `rgba(57, 255, 20, ${glowLevel * 0.8})`;
+        }
+
+        ctx.beginPath();
+        
+        // Create a dynamic radial gradient with the new colors
+        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+        const greenOpacity = 0.7 + glowLevel * 0.3; 
+        // Use Neon Green for the particle core
+        grad.addColorStop(0, `rgba(57, 255, 20, ${greenOpacity})`);
+        // Use Deep Purple for the outer edge
+        grad.addColorStop(1, '#6A0DAD');
+        
+        ctx.fillStyle = grad;
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x - this.radius < 0 || this.x + this.radius > width) {
+            this.vx *= -1;
+        }
+        if (this.y - this.radius < 0 || this.y + this.radius > height) {
+            this.vy *= -1;
+        }
+
+        this.angle += this.speed;
+        const sizeMultiplier = (Math.sin(this.angle) + 1) / 2;
+        this.radius = this.baseRadius + (this.baseRadius * 2 * sizeMultiplier);
+
+        this.draw();
+      }
+    }
+
+    function initParticles(num) {
+      particles = [];
+      for (let i = 0; i < num; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 120) {
+            // Use Neon Green for the connecting lines
+            ctx.strokeStyle = `rgba(57, 255, 20, ${1 - dist / 120})`;
+            ctx.lineWidth = 0.7;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.globalCompositeOperation = 'lighter'; 
+      particles.forEach(p => p.update());
+      drawLines();
+      requestAnimationFrame(animate);
+    }
+
+
+
+    initParticles(70);
+    animate();
+  </script>
 </body>
 </html>
