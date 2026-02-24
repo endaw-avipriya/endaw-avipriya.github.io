@@ -6,210 +6,180 @@
   <title>Avipriya Endaw - Portfolio</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+      margin: 0; [cite: 1]
+      padding: 0; [cite: 2]
+      box-sizing: border-box; [cite: 2]
+      font-family: 'Orbitron', sans-serif; [cite: 2]
     }
 
     body {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      background: #0d0d0d; [cite: 2]
+      color: #e0e0e0; [cite: 3]
+      min-height: 100vh; [cite: 3]
+      overflow-x: hidden; [cite: 3]
+      position: relative; [cite: 3]
     }
 
     canvas#bgCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      position: fixed; [cite: 3]
+      top: 0; [cite: 4]
+      left: 0; [cite: 4]
+      z-index: -1; [cite: 4]
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 20px;
-      z-index: 1000;
+      position: fixed; [cite: 4]
+      top: 0; [cite: 5]
+      width: 100%; [cite: 5]
+      background: rgba(0, 0, 0, 0.8); [cite: 5]
+      backdrop-filter: blur(10px); [cite: 5]
+      padding: 20px; [cite: 5]
+      z-index: 1000; [cite: 5]
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      display: flex; [cite: 6]
+      justify-content: space-between; [cite: 6]
+      align-items: center; [cite: 6]
+      max-width: 1200px; [cite: 6]
+      margin: 0 auto; [cite: 7]
     }
 
     nav h1 {
-      font-size: 1.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 10px rgba(57, 255, 20, 0.3);
+      font-size: 1.5rem; [cite: 7]
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 8]
+      -webkit-background-clip: text; [cite: 8]
+      -webkit-text-fill-color: transparent; [cite: 8]
+      text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 10px rgba(57, 255, 20, 0.3); [cite: 9]
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+      list-style: none; [cite: 10]
+      display: flex; [cite: 10]
+      gap: 20px; [cite: 10]
     }
 
     nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s;
+      color: #e0e0e0; [cite: 11]
+      text-decoration: none; [cite: 11]
+      font-size: 1rem; [cite: 11]
+      transition: background 0.3s; [cite: 12]
     }
 
     nav a:hover {
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 5px rgba(106, 13, 173, 0.7), 0 0 5px rgba(57, 255, 20, 0.3);
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 12]
+      -webkit-background-clip: text; [cite: 13]
+      -webkit-text-fill-color: transparent; [cite: 13]
+      text-shadow: 0 0 5px rgba(106, 13, 173, 0.7), 0 0 5px rgba(57, 255, 20, 0.3); [cite: 13]
     }
 
     .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-    }
-
-    .hero-content {
-      z-index: 1;
+      height: 100vh; [cite: 14]
+      display: flex; [cite: 14]
+      align-items: center; [cite: 14]
+      justify-content: center; [cite: 14]
+      text-align: center; [cite: 15]
+      position: relative; [cite: 15]
+      z-index: 1; [cite: 15]
+      padding: 2rem; [cite: 15]
     }
 
     .hero h2 {
-      font-size: 3rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
-      margin-bottom: 10px;
+      font-size: 3rem; [cite: 16]
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 16]
+      -webkit-background-clip: text; [cite: 17]
+      -webkit-text-fill-color: transparent; [cite: 17]
+      text-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3); [cite: 17]
+      margin-bottom: 10px; [cite: 18]
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 1.2rem; [cite: 18]
+      max-width: 600px; [cite: 18]
+      margin: 0 auto; [cite: 19]
     }
     
-    /* Shared styles for sections */
     .skills, .projects {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
+      padding: 80px 20px; [cite: 19]
+      max-width: 1200px; [cite: 20]
+      margin: 0 auto; [cite: 20]
+      text-align: center; [cite: 20]
     }
 
     .skills h2, .projects h2 {
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2);
-      margin-bottom: 40px;
+      font-size: 2.5rem; [cite: 20]
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 21]
+      -webkit-background-clip: text; [cite: 21]
+      -webkit-text-fill-color: transparent; [cite: 21]
+      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2); [cite: 22]
+      margin-bottom: 40px; [cite: 22]
     }
 
     .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      display: grid; [cite: 23]
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); [cite: 23]
+      gap: 20px; [cite: 23]
     }
 
     .skill-card, .project-card {
-      background: #1a1a1a;
-      padding: 25px;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid transparent;
+      background: #1a1a1a; [cite: 24]
+      padding: 25px; [cite: 24]
+      border-radius: 10px; [cite: 24]
+      transition: transform 0.3s, box-shadow 0.3s; [cite: 25]
+      border: 1px solid transparent; [cite: 25]
       background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-                  linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%) border-box;
-      text-align: left;
+                  linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%) border-box; [cite: 25]
+      text-align: left; [cite: 26]
     }
 
     .skill-card:hover, .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
-    }
-
-    .skill-card h3, .project-card h3 {
-      font-size: 1.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-    
-    .project-card p {
-      margin-bottom: 20px;
+      transform: translateY(-10px); [cite: 26]
+      box-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3); [cite: 27]
     }
 
     .project-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      color: #39FF14;
-      border: 1px solid #39FF14;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      display: inline-block; [cite: 31]
+      padding: 10px 20px; [cite: 31]
+      text-decoration: none; [cite: 31]
+      border-radius: 5px; [cite: 31]
+      color: #39FF14; [cite: 32]
+      border: 1px solid #39FF14; [cite: 32]
+      font-weight: bold; [cite: 32]
+      transition: all 0.3s ease; [cite: 32]
     }
     
     .project-btn:hover {
-      background-color: #39FF14;
-      color: #0d0d0d;
-      box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+      background-color: #39FF14; [cite: 33]
+      color: #0d0d0d; [cite: 33]
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); [cite: 34]
     }
 
     .contact {
-      padding: 80px 20px;
-      background: #0d0d0d;
-      text-align: center;
+      padding: 80px 20px; [cite: 34]
+      background: #0d0d0d; [cite: 35]
+      text-align: center; [cite: 35]
     }
 
     .contact h2 {
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2);
-      margin-bottom: 20px;
+      font-size: 2.5rem; [cite: 35]
+      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 36]
+      -webkit-background-clip: text; [cite: 36]
+      -webkit-text-fill-color: transparent; [cite: 36]
+      text-shadow: 0 0 3px rgba(106, 13, 173, 0.4), 0 0 3px rgba(57, 255, 20, 0.2); [cite: 37]
+      margin-bottom: 20px; [cite: 37]
     }
 
     .contact a {
-      color: #39FF14;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    .contact a:hover {
-      color: #6A0DAD;
-      text-decoration: underline;
+      color: #39FF14; [cite: 38]
+      text-decoration: none; [cite: 38]
+      font-size: 1.1rem; [cite: 38]
+      transition: color 0.3s; [cite: 39]
     }
 
     @media (max-width: 768px) {
-      nav ul {
-        gap: 10px;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .skills-grid, .projects-grid {
-        grid-template-columns: 1fr;
-      }
+      nav ul { gap: 10px; [cite: 40, 41] }
+      .hero h2 { font-size: 2rem; [cite: 42] }
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; [cite: 43] }
     }
   </style>
 </head>
@@ -231,7 +201,10 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h2>Hi, I'm Avipriya Endaw</h2>
-      <p>Software developer with a practical approach to building reliable, maintainable code. Comfortable working across the stack and collaborating in team environments. Focused on writing clean code, learning continuously, and contributing to meaningful projects. Explore my work below!</p>
+      <p>Software developer with a practical approach to building reliable, maintainable code. [cite: 44]
+      Comfortable working across the stack and collaborating in team environments. [cite: 45]
+      Focused on writing clean code, learning continuously, and contributing to meaningful projects. [cite: 46]
+      Explore my work below!</p> [cite: 47]
     </div>
   </section>
 
@@ -248,7 +221,7 @@
       </div>
       <div class="skill-card">
         <h3>Data Analysis</h3>
-        <p>Extracting insights from structured trading data using Redis, Protobuf, and JSON.</p>
+        <p>Extracting insights from structured trading data using Redis, Protobuf, and JSON.</p> [cite: 48]
       </div>
       <div class="skill-card">
         <h3>Database Management</h3>
@@ -261,11 +234,11 @@
     <h2>My Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <h3>Goblin Algo</h3>
-        <p>A high-frequency trading bot built with Java, Spring Boot, and PL/SQL, utilizing Redis for ultra-low latency data caching and messaging.</p>
+        <h3>Goblin Algo</h3> [cite: 49]
+        <p>A high-frequency trading bot built with Java, Spring Boot, and PL/SQL, utilizing Redis for ultra-low latency data caching and messaging.</p> [cite: 49]
         <a href="https://github.com/endaw-avipriya/Goblin" class="project-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
-      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact">
@@ -275,105 +248,140 @@
   </section>
 
   <script>
+    // Smooth scrolling [cite: 50]
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        e.preventDefault(); [cite: 50]
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+          behavior: 'smooth' [cite: 51]
         });
-      });
+      }); [cite: 52]
     });
 
     const canvas = document.getElementById('bgCanvas');
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
+    
+    // Mouse interaction object
+    const mouse = {
+      x: null,
+      y: null,
+      radius: 180 // Area of attraction
+    };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
 
     function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }
+      width = canvas.width = window.innerWidth; [cite: 53]
+      height = canvas.height = window.innerHeight; [cite: 53]
+    } [cite: 54]
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
     class Particle {
       constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.baseRadius = Math.random() * 1.5 + 1;
-        this.radius = this.baseRadius;
-        this.angle = Math.random() * Math.PI * 2;
-        this.speed = (Math.random() * 0.04) + 0.01;
+        this.x = Math.random() * width; [cite: 54]
+        this.y = Math.random() * height; [cite: 55]
+        this.vx = (Math.random() - 0.5) * 1.5; [cite: 55]
+        this.vy = (Math.random() - 0.5) * 1.5; [cite: 55]
+        this.baseRadius = Math.random() * 1.5 + 1; [cite: 56]
+        this.radius = this.baseRadius; [cite: 56]
+        this.angle = Math.random() * Math.PI * 2; [cite: 56]
+        this.speed = (Math.random() * 0.04) + 0.01; [cite: 57]
       }
 
       draw() {
-        const glowLevel = (this.radius - this.baseRadius) / (this.baseRadius * 2);
-
-        ctx.save();
-
+        const glowLevel = (this.radius - this.baseRadius) / (this.baseRadius * 2); [cite: 57]
+        ctx.save(); [cite: 58]
         if (glowLevel > 0.1) {
-          ctx.shadowBlur = glowLevel * 30;
-          // Use Neon Green for the shadow glow
-          ctx.shadowColor = `rgba(57, 255, 20, ${glowLevel * 0.8})`;
+          ctx.shadowBlur = glowLevel * 30; [cite: 58]
+          ctx.shadowColor = `rgba(57, 255, 20, ${glowLevel * 0.8})`; [cite: 59]
         }
-
-        ctx.beginPath();
-        
-        // Create a dynamic radial gradient with the new colors
-        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-        const greenOpacity = 0.7 + glowLevel * 0.3; 
-        // Use Neon Green for the particle core
-        grad.addColorStop(0, `rgba(57, 255, 20, ${greenOpacity})`);
-        // Use Deep Purple for the outer edge
-        grad.addColorStop(1, '#6A0DAD');
-        
-        ctx.fillStyle = grad;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
+        ctx.beginPath(); [cite: 60]
+        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius); [cite: 60]
+        const greenOpacity = 0.7 + glowLevel * 0.3; [cite: 61]
+        grad.addColorStop(0, `rgba(57, 255, 20, ${greenOpacity})`); [cite: 61]
+        grad.addColorStop(1, '#6A0DAD'); [cite: 62]
+        ctx.fillStyle = grad; [cite: 62]
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); [cite: 63]
+        ctx.fill(); [cite: 63]
+        ctx.restore(); [cite: 63]
       }
 
       update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x - this.radius < 0 || this.x + this.radius > width) {
-            this.vx *= -1;
+        // Aggressive Swarm Physics
+        if (mouse.x !== null && mouse.y !== null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            const strength = 0.6; // High magnetic strength
+            this.vx += (dx / dist) * force * strength;
+            this.vy += (dy / dist) * force * strength;
+          }
         }
-        if (this.y - this.radius < 0 || this.y + this.radius > height) {
-            this.vy *= -1;
-        }
 
-        this.angle += this.speed;
-        const sizeMultiplier = (Math.sin(this.angle) + 1) / 2;
-        this.radius = this.baseRadius + (this.baseRadius * 2 * sizeMultiplier);
+        // Friction to maintain control
+        this.vx *= 0.94;
+        this.vy *= 0.94;
 
-        this.draw();
+        this.x += this.vx; [cite: 63]
+        this.y += this.vy; [cite: 64]
+
+        if (this.x < 0 || this.x > width) this.vx *= -1; [cite: 64, 65]
+        if (this.y < 0 || this.y > height) this.vy *= -1; [cite: 65, 66]
+
+        this.angle += this.speed; [cite: 66]
+        const sizeMultiplier = (Math.sin(this.angle) + 1) / 2; [cite: 66]
+        this.radius = this.baseRadius + (this.baseRadius * 2 * sizeMultiplier); [cite: 67]
+        this.draw(); [cite: 67]
       }
     }
 
     function initParticles(num) {
-      particles = [];
+      particles = []; [cite: 68]
       for (let i = 0; i < num; i++) {
-        particles.push(new Particle());
-      }
+        particles.push(new Particle()); [cite: 69]
+      } [cite: 70]
     }
 
     function drawLines() {
       for (let i = 0; i < particles.length; i++) {
+        // Connect to Mouse
+        if (mouse.x !== null && mouse.y !== null) {
+          let dxM = particles[i].x - mouse.x;
+          let dyM = particles[i].y - mouse.y;
+          let distM = Math.sqrt(dxM * dxM + dyM * dyM);
+          if (distM < mouse.radius) {
+            ctx.strokeStyle = `rgba(106, 13, 173, ${1 - distM / mouse.radius})`; // Purple lines
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+
+        // Connect to other particles
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < 120) {
-            // Use Neon Green for the connecting lines
-            ctx.strokeStyle = `rgba(57, 255, 20, ${1 - dist / 120})`;
-            ctx.lineWidth = 0.7;
+          const dx = particles[i].x - particles[j].x; [cite: 70]
+          const dy = particles[i].y - particles[j].y; [cite: 71]
+          const dist = Math.sqrt(dx * dx + dy * dy); [cite: 71]
+          if (dist < 120) { [cite: 72]
+            ctx.strokeStyle = `rgba(57, 255, 20, ${1 - dist / 120})`; [cite: 72]
+            ctx.lineWidth = 0.7; [cite: 73]
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -384,16 +392,14 @@
     }
 
     function animate() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.globalCompositeOperation = 'lighter'; 
+      ctx.clearRect(0, 0, width, height); [cite: 73]
+      ctx.globalCompositeOperation = 'lighter'; [cite: 74]
       particles.forEach(p => p.update());
       drawLines();
       requestAnimationFrame(animate);
     }
 
-
-
-    initParticles(70);
+    initParticles(80);
     animate();
   </script>
 </body>
