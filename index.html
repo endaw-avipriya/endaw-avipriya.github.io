@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Avipriya Endaw - Portfolio</title>
+  [cite_start]<title>Avipriya Endaw - Portfolio [cite: 1]</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+      [cite_start]font-family: 'Orbitron', sans-serif; [cite: 2]
     }
 
     body {
-      background: #0d0d0d; /*  */
-      color: #e0e0e0; /*  */
+      [cite_start]background: #0d0d0d; [cite: 3]
+      [cite_start]color: #e0e0e0; [cite: 3]
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
@@ -22,55 +22,54 @@
 
     canvas#bgCanvas {
       position: fixed;
-      top: 0;
+      [cite_start]top: 0; [cite: 4]
       left: 0;
       z-index: -1;
     }
 
     header {
       position: fixed;
-      top: 0;
+      [cite_start]top: 0; [cite: 5]
       width: 100%;
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
       padding: 20px;
-      z-index: 1000;
+      [cite_start]z-index: 1000; [cite: 6]
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
+      [cite_start]max-width: 1200px; [cite: 7]
       margin: 0 auto;
     }
 
     nav h1 {
       font-size: 1.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); /* [cite: 8] */
+      [cite_start]background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 8]
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 10px rgba(57, 255, 20, 0.3); /* [cite: 9] */
+      [cite_start]text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 10px rgba(57, 255, 20, 0.3); [cite: 9]
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      [cite_start]gap: 20px; [cite: 10]
     }
 
     nav a {
-      color: #e0e0e0;
+      [cite_start]color: #e0e0e0; [cite: 11]
       text-decoration: none;
       font-size: 1rem;
-      transition: background 0.3s;
+      [cite_start]transition: background 0.3s; [cite: 12]
     }
 
     nav a:hover {
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
+      [cite_start]background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 13]
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 5px rgba(106, 13, 173, 0.7), 0 0 5px rgba(57, 255, 20, 0.3);
     }
 
     .hero {
@@ -78,93 +77,75 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
+      [cite_start]text-align: center; [cite: 15]
       z-index: 1;
       padding: 2rem;
     }
 
     .hero h2 {
-      font-size: 3rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); /* [cite: 17] */
+      [cite_start]font-size: 3rem; [cite: 16]
+      [cite_start]background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%); [cite: 17]
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3);
-      margin-bottom: 10px;
+      [cite_start]text-shadow: 0 0 20px rgba(106, 13, 173, 0.7), 0 0 20px rgba(57, 255, 20, 0.3); [cite: 18]
     }
 
     .hero p {
-      font-size: 1.2rem;
+      [cite_start]font-size: 1.2rem; [cite: 19]
       max-width: 600px;
       margin: 0 auto;
     }
     
     .skills, .projects {
-      padding: 80px 20px;
+      [cite_start]padding: 80px 20px; [cite: 20]
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .skills h2, .projects h2 {
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 40px;
-    }
-
     .skills-grid, .projects-grid {
-      display: grid;
+      [cite_start]display: grid; [cite: 24]
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
     .skill-card, .project-card {
-      background: #1a1a1a;
+      [cite_start]background: #1a1a1a; [cite: 25]
       padding: 25px;
       border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid transparent;
+      [cite_start]border: 1px solid transparent; [cite: 26]
       background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-                  linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%) border-box; /* [cite: 26] */
+                  linear-gradient(45deg, #39FF14 20%, #6A0DAD 80%) border-box;
       text-align: left;
     }
 
-    .skill-card:hover, .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
-    }
-
     .project-btn {
-      display: inline-block;
+      [cite_start]display: inline-block; [cite: 32]
       padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      color: #39FF14;
+      [cite_start]color: #39FF14; [cite: 33]
       border: 1px solid #39FF14;
+      text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s ease;
     }
     
     .project-btn:hover {
-      background-color: #39FF14;
+      [cite_start]background-color: #39FF14; [cite: 34]
       color: #0d0d0d;
     }
 
     .contact {
-      padding: 80px 20px;
+      [cite_start]padding: 80px 20px; [cite: 35]
       text-align: center;
     }
 
     .contact a {
-      color: #39FF14;
+      [cite_start]color: #39FF14; [cite: 39]
       text-decoration: none;
     }
 
     @media (max-width: 768px) {
-      .hero h2 { font-size: 2rem; }
-      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 2rem; [cite_start]} [cite: 42]
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; [cite_start]} [cite: 43]
     }
   </style>
 </head>
@@ -186,40 +167,39 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h2>Hi, I'm Avipriya Endaw</h2>
-      <p>Software developer with a practical approach to building reliable, maintainable code. [cite: 44]
-      Focused on writing clean code, learning continuously, and contributing to meaningful projects. [cite: 46]</p>
+      [cite_start]<p>Software developer with a practical approach to building reliable, maintainable code. [cite: 44]
+      [cite_start]Comfortable working across the stack and collaborating in team environments. [cite: 45]
+      [cite_start]Focused on writing clean code, learning continuously, and contributing to meaningful projects. [cite: 46]</p>
     </div>
   </section>
 
   <section id="skills" class="skills">
-    <h2>My Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
         <h3>Programming Languages</h3>
-        <p>C, Java, JavaScript</p>
+        [cite_start]<p>C, Java, JavaScript</p> [cite: 47]
       </div>
       <div class="skill-card">
         <h3>Web Development</h3>
-        <p>Creating modern, responsive websites with HTML, CSS, and JavaScript.</p>
+        [cite_start]<p>Modern, responsive websites with HTML, CSS, and JS.</p> [cite: 47]
       </div>
       <div class="skill-card">
         <h3>Data Analysis</h3>
-        <p>Extracting insights from structured trading data using Redis, Protobuf, and JSON. [cite: 48]</p>
+        [cite_start]<p>Extracting insights using Redis, Protobuf, and JSON.</p> [cite: 48]
       </div>
       <div class="skill-card">
         <h3>Database Management</h3>
-        <p>Managing data integrity and performance with optimized SQL and Oracle PL/SQL.</p>
+        [cite_start]<p>Optimized SQL and Oracle PL/SQL.</p> [cite: 48]
       </div>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>My Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>Goblin Algo</h3>
-        <p>A high-frequency trading bot built with Java, Spring Boot, and PL/SQL. [cite: 49]</p>
-        <a href="https://github.com/endaw-avipriya/Goblin" class="project-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        [cite_start]<p>High-frequency trading bot built with Java, Spring Boot, and PL/SQL. [cite: 49]</p>
+        <a href="https://github.com/endaw-avipriya/Goblin" class="project-btn" target="_blank">View on GitHub</a>
       </div>
     </div>
   </section>
@@ -231,24 +211,15 @@
   </section>
 
   <script>
-    // Smooth scrolling [cite: 50, 51]
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
     const canvas = document.getElementById('bgCanvas');
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
     
-    // Mouse interaction object
     const mouse = {
       x: null,
       y: null,
-      radius: 200 // Radius of attraction
+      radius: 150 // Distance particles stay from mouse
     };
 
     window.addEventListener('mousemove', (e) => {
@@ -256,7 +227,6 @@
       mouse.y = e.y;
     });
 
-    // Reset mouse if it leaves window
     window.addEventListener('mouseout', () => {
       mouse.x = null;
       mouse.y = null;
@@ -264,74 +234,52 @@
 
     function resizeCanvas() {
       width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      [cite_start]height = canvas.height = window.innerHeight; [cite: 53]
     }
-
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
     class Particle {
       constructor() {
-        this.x = Math.random() * width;
+        [cite_start]this.x = Math.random() * width; [cite: 55]
         this.y = Math.random() * height;
-        // Faster initial velocity so they don't look like static dots
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
         this.baseRadius = Math.random() * 2 + 1;
         this.radius = this.baseRadius;
-        this.angle = Math.random() * Math.PI * 2;
-        this.speed = (Math.random() * 0.05) + 0.02;
+        // 3D Orbital properties
+        this.orbitAngle = Math.random() * Math.PI * 2;
+        this.orbitSpeed = (Math.random() * 0.02) + 0.01;
+        this.phi = Math.random() * Math.PI * 2; // For 3D depth
+        this.distance = mouse.radius + (Math.random() * 30); // Maintains distance
       }
 
       draw() {
-        const glowLevel = (this.radius - this.baseRadius) / (this.baseRadius * 2);
-        ctx.save();
-        
-        // High glow for visibility against black
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = 'rgba(57, 255, 20, 0.5)';
+        // Perspective scaling (makes it feel 3D)
+        const scale = (Math.sin(this.phi) + 2) / 3;
+        const currentRadius = this.radius * scale;
 
         ctx.beginPath();
-        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-        grad.addColorStop(0, '#39FF14'); // Neon Green core [cite: 61]
-        grad.addColorStop(1, '#6A0DAD'); // Purple edge [cite: 62]
-        
+        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, currentRadius);
+        grad.addColorStop(0, `rgba(57, 255, 20, ${scale})`); [cite_start]// Neon Green [cite: 61]
+        grad.addColorStop(1, 'rgba(106, 13, 173, 0.2)'); [cite_start]// Purple [cite: 62]
         ctx.fillStyle = grad;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
-        ctx.restore();
       }
 
       update() {
-        // Strong Magnetic Attraction
         if (mouse.x !== null && mouse.y !== null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < mouse.radius) {
-            const force = (mouse.radius - dist) / mouse.radius;
-            const strength = 0.8; // Aggressive swarm
-            this.vx += (dx / dist) * force * strength;
-            this.vy += (dy / dist) * force * strength;
-          }
+          // Orbit Logic: Move in a 3D circle around the mouse
+          this.orbitAngle += this.orbitSpeed;
+          this.phi += 0.01;
+
+          // Trigonometry for 3D sphere projection
+          this.x = mouse.x + Math.cos(this.orbitAngle) * this.distance * Math.cos(this.phi);
+          this.y = mouse.y + Math.sin(this.orbitAngle) * this.distance;
+        } else {
+          // Default drift when mouse is away
+          this.x += Math.cos(this.orbitAngle) * 0.5;
+          this.y += Math.sin(this.orbitAngle) * 0.5;
         }
-
-        // Friction to keep movement fluid
-        this.vx *= 0.95;
-        this.vy *= 0.95;
-
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Bounce off screen edges [cite: 64, 65]
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-
-        // Pulse size
-        this.angle += this.speed;
-        this.radius = this.baseRadius + (Math.sin(this.angle) + 1);
-
         this.draw();
       }
     }
@@ -339,34 +287,29 @@
     function initParticles(num) {
       particles = [];
       for (let i = 0; i < num; i++) {
-        particles.push(new Particle());
+        [cite_start]particles.push(new Particle()); [cite: 69]
       }
     }
 
     function drawLines() {
       for (let i = 0; i < particles.length; i++) {
-        // Line to Mouse
+        // Line to Mouse Center (Central Web)
         if (mouse.x !== null && mouse.y !== null) {
-          let dxM = particles[i].x - mouse.x;
-          let dyM = particles[i].y - mouse.y;
-          let distM = Math.sqrt(dxM * dxM + dyM * dyM);
-          if (distM < mouse.radius) {
-            ctx.strokeStyle = `rgba(106, 13, 173, ${1 - distM / mouse.radius})`;
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
+          ctx.strokeStyle = `rgba(57, 255, 20, 0.15)`; // Faint green web
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
         }
 
-        // Line to neighbors [cite: 70, 71]
+        // Connection between dots in the sphere
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) {
-            ctx.strokeStyle = `rgba(57, 255, 20, ${1 - dist / 100})`; // [cite: 72]
+          if (dist < 80) {
+            [cite_start]ctx.strokeStyle = `rgba(106, 13, 173, ${1 - dist / 80})`; [cite: 72]
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -378,16 +321,23 @@
     }
 
     function animate() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.globalCompositeOperation = 'lighter'; // [cite: 74]
+      [cite_start]ctx.clearRect(0, 0, width, height); [cite: 74]
+      ctx.globalCompositeOperation = 'lighter'; 
       particles.forEach(p => p.update());
       drawLines();
       requestAnimationFrame(animate);
     }
 
-    // Increased to 150 particles for density
-    initParticles(150);
+    initParticles(100);
     animate();
+    
+    [cite_start]// Smooth scroll [cite: 50]
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        [cite_start]document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); [cite: 51]
+      });
+    });
   </script>
 </body>
 </html>
